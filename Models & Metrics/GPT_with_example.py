@@ -7,6 +7,16 @@ import nltk
 import traceback
 from openai import OpenAI
 import time
+
+lan = 'java.jsonl'
+output_filenames = {
+    1: 'javaadd16k_gpt_1_noselect.jsonl',
+    3: 'javaadd16k_gpt_3_noselect.jsonl',
+    5: 'javaadd16k_gpt_5_noselect.jsonl',
+    10: 'javaadd16k_gpt_10_noselect.jsonl',
+}
+best_file = 'javabest_no_select.jsonl'
+key_list = []
 def is_camel_case(s):
     return s != s.lower() and s != s.upper() and "_" not in s
 
@@ -57,15 +67,8 @@ def process_diff(diff):
     return get_tokens(diff)
 
 
-output_filenames = {
-    1: 'javaadd16k_gpt_1_noselect.jsonl',
-3: 'javaadd16k_gpt_3_noselect.jsonl',
-5: 'javaadd16k_gpt_5_noselect.jsonl',
-10: 'javaadd16k_gpt_10_noselect.jsonl',
-}
-
 # 打开JSONL文件并读取数据
-with open('java2.jsonl', 'r',encoding='utf8') as f:
+with open(lan, 'r',encoding='utf8') as f:
     json_data = f.readlines()
 data = {"diff_id": 0, "msg": f"0", "msgGPT": f"0", "METEOR Score": f"0", "BLEU Score": f"0", "ROUGE-L Score": f"0"}
 
@@ -75,28 +78,7 @@ temp = 0
 for item in json_data:
     attempts = 0
     while attempts < 5:
-        key_list = [
-         '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',
-         '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',
-         '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',
-         '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',
-         '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',
-         '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',
-         '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',
-         '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',
-         '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',
-         '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',
-         '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',
-         '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',
-         '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',
-         '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',
-         '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',
-         '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',
-         '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',
-         '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',
-         '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',
-         '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'
-        ]
+        key_list = key_list
         key = key_list[temp]
         client = OpenAI(
             api_key=key,
@@ -127,7 +109,7 @@ for item in json_data:
         # Example usage:
         # 提取对应的best_diff和best_msg
         best_diffs_msgs = []
-        with open('javabest_no_select.jsonl', 'r',encoding='utf8') as file:
+        with open(best_file, 'r',encoding='utf8') as file:
             for line in file:
                 best_data = json.loads(line)
                 if best_data['diff_id'] == diff_id:
