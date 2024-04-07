@@ -10,6 +10,10 @@ from nltk.tokenize import word_tokenize
 # 初始化NLTK的组件
 nltk.download('punkt')
 
+key = ''
+lan = 'py.jsonl'
+output_filename = 'pyaddresult_gemini.jsonl'
+
 def is_camel_case(s):
     return s != s.lower() and s != s.upper() and "_" not in s
 
@@ -44,7 +48,7 @@ def remove_between_identifiers(text, identifier_start, identifier_end):
     return result
 
 # 设置Gemini API
-genai.configure(api_key="AIzaSyDFhn3cI0UR4eo2cT90RAuJCzx59AwZGwQ")
+genai.configure(key)
 generation_config = {
     "temperature": 0.8,
     "top_p": 0.95,
@@ -52,11 +56,8 @@ generation_config = {
 }
 model = genai.GenerativeModel(model_name="gemini-pro", generation_config=generation_config)
 
-# 定义输出文件名
-output_filenames = 'pyaddresult_gemini.jsonl'
-
 # 读取并处理代码差异数据
-with open('py1.jsonl', 'r') as f:
+with open(lan, 'r') as f:
     json_data = f.readlines()
 
 for item in json_data:
@@ -91,7 +92,7 @@ for item in json_data:
                 "diff_id": diff_id,
                 f"generated_msg_{num_examples}": generated_msg
             }
-            with open(output_filenames[num_examples], 'a', encoding='utf8') as f:
+            with open(output_filename[num_examples], 'a', encoding='utf8') as f:
                 json.dump(output_data, f)
                 f.write('\n')
         else:
