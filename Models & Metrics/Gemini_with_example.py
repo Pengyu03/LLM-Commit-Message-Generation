@@ -6,16 +6,16 @@ import traceback
 import google.generativeai as genai
 import nltk
 from nltk.tokenize import word_tokenize
-# 定义输出文件名
+
+lan = 'py.jsonl'
 output_filenames = {
     1: 'pyaddresult_gemini_1nov.jsonl',
     3: 'pyaddresult_gemini_3nov.jsonl',
     5: 'pyaddresult_gemini_5nov.jsonl',
     10: 'pyaddresult_gemini_10nov.jsonl'
 }
-key = " "
-best = 'pybest_no_selectv.jsonl'
-lan = 'py1.jsonl'
+key = ' '
+best_file = 'pybest_no_selectv.jsonl'
 # 初始化NLTK的组件
 nltk.download('punkt')
 
@@ -77,7 +77,7 @@ for item in json_data:
 
     # 提取对应的best_diff和best_msg
     best_diffs_msgs = []
-    with open(best, 'r') as file:
+    with open(best_file, 'r') as file:
         for line in file:
             best_data = json.loads(line)
             if best_data['diff_id'] == diff_id:
