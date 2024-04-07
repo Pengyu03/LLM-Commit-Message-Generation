@@ -14,8 +14,8 @@ The datasets are located in the `datasets` directory, with each language's datas
 ## Code:
 This repository includes the following code:
 
-* Code for reproducing the Bi-LSTM model: Located in the `models/Bi-LSTM` directory.
-* Code for LLM-based commit message generation: Located in the `models/LLM` directory, comprising code for LLaMA-7B, LLaMA-13B, GPT-3.5, and Gemini models. For GPT-3.5 and Gemini, we provide two versions of the code: one with examples (with_example) and one without examples (without_example).
+* Code for reproducing the Bi-LSTM model: Located in the `Bi-LSTM` directory.
+* Code for LLM-based commit message generation: Located in the `Models & Metrics` directory, comprising code for LLaMA-7B, LLaMA-13B, GPT-3.5, and Gemini models. For GPT-3.5 and Gemini, we provide two versions of the code: one with examples (with_example) and one without examples (without_example).
 * Tools for retrieving the best examples: Located in the `tools` directory, including semantic retrieval tools and lexical retrieval tools.
 
 ## Quick Start
