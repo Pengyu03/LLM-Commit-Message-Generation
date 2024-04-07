@@ -1,0 +1,165 @@
+label,new_message1
+3,assert to assertTrue 
+0,change version to <version> to prepare for next major release 
+3,Add  <method_name>  
+3,Close the source after reading regardless of result. 
+3,"Removed  <file_name> , replaced with  <file_name> , which moved to model package with  <file_name>  "
+0,Use accessor for in-progress async count added in <iden> <version>  <enter> Closes <link> 
+0,"Align expectations of various <iden> configurations  <enter> They all want to create an <iden> and when that happens user sees no MBeans, or sometimes just one set (<iden> Core, <iden> or <iden>). To harmonise them we create a  @bean  of type <iden> and link to it in the other autoconfigs <enter>  Fixes <link> "
+1,Formatting. 
+3,"Multiple categories on tests,  <file_name>  inheritance, production classes in production package. "
+2,Another <iden> bites the dust 
+0,Fix mapping of <iden>'s idle-timeout and heartbeat-interval  <enter> Previous to this commit the connection idle timeout and heartbeat interval were mapped to seconds whereas <iden> expects ms for all duration types. <enter> This commit fixes the mapping and removes the default duration unit since it should be considered ms like every other duration properties. <enter>  Closes <link> 
+0,HTTP/1 >> <iden> 
+3,Update custom conversion docs per feedback  <enter> * Clarify that <iden> is just the default converter * Add section on other built-in converters * Add section on implementing your own custom converters 
+2,Really support requests greater than 2 GiB.  <enter> <url> 
+2,[Enhancement]:  <file_name>  ( <link> ) 
+0,Code review ( <link> )  <enter> * movde <iden> into  <file_name>  as a default method <enter> * adjust javado <enter> * optimize diamond <enter> * polish the code 
+0,Update readme and changelog for <version>. 
+0,Update documentation for new <iden> support 
+0,"Advance version, and beef up  <file_name>  with checkThat and checkPasses "
+3,Extract iterable and array behavior from  <method_name>  
+2,Fix a race in  <method_name>  ( <link> )  <enter> We were assuming on a client failure the server wouldn't have any further events. But it will get a failure if we give it a moment. This was causing some test flakiness. 
+2,fix qos configuration cannot work after added 'qos-enable' style support ( <link> ) <enter>  fixes <link> 
+0,Fixup  <file_name>  so that it's worthy of production use.  <enter> This changes the default from the insecure 1024-bit <iden> to a secure 256-bit <iden> key. It adds a new option to use <iden> keys for interoperating with older clients. 
+0,Move 'testdb' naming to  <file_name> <enter> Move the 'testdb' naming logic to ` <file_name> ` and expose the `deduceDatabaseName` method so they can be used in auto-configuration. <enter> See  <link> 
+0,Java 7 is required since <link> 
+3,Backfill spdy and http/2 related tests wrt zero-length messages. 
+0,Polish 'Update documentation to reference webjars-locator-core'  <enter> Closes <link> 
+3,Add transfer encoding to multipart parts.  <enter> Also: <enter>  * Reject multiple annotations on method parameters.  * Pre-size <iden> instances to their likely size. 
+0,enhance comments ( <link> ) 
+3,"Move  <file_name>  into the main package, remove <iden> from core.  <enter> This change means that only <iden> and <iden> are the types which are allowed for their respective objects by default. If you want serialization of any kind, you need to opt-in with either your own  <file_name>  or one of the provided ones. "
+0,Align counter behaviour between metric exporters  <enter> The MetricCopyExporter has had the capability for a while to keep track of counters internally. This change aligns that with the  <method_name>  <enter>  Fixes <link> 
+0,Upgrade Spring WS to <version>  <enter> Closes <link> 
+2,Both hasCause() and hasMessage() describe mismatches 
+0,Add <iden> to embedded servlet containers  <enter> *  <file_name>  now has a <iden> property * The  <file_name>  in Actuator supports it <enter> [Fixes #53667353] [bs-243] Support <iden> 
+1,New Javadocs.  <enter> <url> 
+0,update year to 2021 ( <link> ) 
+0,remove unnecessary null check before instance of ( <link> )  <enter>  > 
+2,Fix NPE in  <file_name>  
+3,Remove optional mark on GSON dependency. 
+3,Pull <iden> up into  <file_name>  
+3,Added release theme header 
+0,IOException instead of <iden> in  <file_name>  API ( <link> ) 
+0,Also refer to the latest OkHttp version. 
+0,Release websocket transmitter before failing response <link> 
+0,Remove unused classes from <link> . 
+3,Added blurb about GSON documentation 
+0,"Testing with <iden> 12 and latest <version> ( <link> )  <enter> <iden> 12 and be more specific about when we expect failures, e.g. <version> has fixes we should take into account. "
+3,Migrate  <file_name>  to context runner 
+3,Use a <iden> for body contents. 
+0, <file_name> : Added getTag() and logChunk() methods  for easier subclassing. 
+3,Remove decoration on all external links 
+0,List more contributor names 
+2,"Fix a severe bug where multiple <iden> tunnels were attempted.  <enter> The previous code would attempt a <iden> tunnel on reused HTTPS connections, even after the tunnel had been established. This is a severe protocol error! "
+0,"Introduce defined extension point for modifying the environment  <enter> The commit introduces a new extension point,  <file_name> , that can be implemented by classes that want to modify the environment. Implementations of  <file_name>  are loaded via  <file_name>  and called in response to the <iden>. <iden> listeners that wish to work with the post-processed environment can continue to listen to <iden> and order themselves to run after  <method_name>  <enter> Existing ApplicationListeners that modify the environment have, where possible, been updated to implement  <file_name>  instead. <enter>  Closes <link> "
+0,refactor package  <enter> <url> 
+3,Added 'How do I write a test for an abstract class?' 
+0, <file_name>  version updates. Drop unused dependencies. 
+2,bugfix:fix alibaba  <file_name>  setAttachment(<iden>) ( <link> ) 
+3,Revert 'Revert 'Allow  <file_name>  instantiation. Hide some Apache implementation details.'' <enter> This reverts commit  <link> . 
+3,add support for Observable requests with <iden>  <enter> <iden> interface methods may now specify Observable as a return type. 
+2,code rule ( <link> ) 
+0,Rewrite RxJava call adapter tests to be more understandable. 
+0,"Remove duplicate resources from classpath  <enter> We had been making a special case for logback.xml anyway, so extending that to simply deleting recursively all of src/main/resources (or equivalent) from target/classes (or equivalent) seems like it's perfectly justifiable. <enter>  Fixes <link> "
+0,Include tasks with custom triggers in scheduledtasks endpoint output  <enter> Closes <link> 
+0,Remove dependency management for `hibernate-entitymanager`  <enter> Closes <link> 
+0,move construction of <iden> outside the lambda expression ( <link>  <enter> <link> ) 
+0,"Move cache writing out of the  <method_name> <enter> This is necessary to unblock network interceptors, where the interceptor may elect to rewrite the response body. If we've already cached the original response body, we're too late. "
+0," <file_name>  API sketch.  <enter> <iden>'m unhappy with java.io:  * No timeouts.  * Every layer needs to copy bytes around. Always copying bytes.  * Features like mark/reset and available() are clumsy.  * Its awkard in mixed text/binary protocols like <iden> because  character decoding is separate and takes over the stream. <enter> Unfortunately java.nio isn't better, just different:  * It's complex.  * <iden> are fixed size.  * No built-in buffer pooling.  * Features like mark/reset/position are clumsy. <enter> This is an obnoxious attempt at a 3rd <iden>/O interface, mostly inspired by <iden> and <iden>, but using growable buffers instead of byte arrays as the core data container. "
+3,Add default constructor to  <file_name>  
+3,modify consumer  <file_name> : param type from string to map 
+0,fix comment grammar error ( <link> )  <enter> Co-authored-by: tangtong <alan1@sfmail.sf-express.com> 
+0,Remove redundant judgment ( <link> ) 
+3,Apply code review. 
+3,"Getting there with  <file_name> , but checking in before everything works, to demo squeezing <enter> "
+2,Fix checkstyle issues in new <iden> code. 
+0,Migrate from Travis to GitHub Action for publishing 
+0,Start building against snapshots for Spring Kafka <version>  <enter> See  <link> 
+3, <file_name>  takes <iden> target 
+0,use revision in  <file_name>  ( <link> ) 
+0,Exclude @ManagedResources from <iden> MBeans  <enter> If an <iden> is already <iden> then it doesn't need an additional (probably wrong) MBEan registration based on the invoke() method. 
+0,Support reactive web servers with LocalServerPort  <enter> This commit refactors the ` <file_name> ` hierarchy to have one specialized event for <iden> based apps and another one for reactive apps. <enter> Each event implementation has: <enter> * a specific `<iden>` implementation for the app * a custom `<iden>` implementation that differentiates the application server from the management server <enter>  Closes <link> 
+0,Convert  <file_name>  to Kotlin ( <link> )  <enter> * Rename  <file_name>  to .kt <enter> * Convert  <file_name>  to Kotlin 
+1,Newine at end of file. Yes plz. 
+2,baseUrl should end with '/' 
+0,"temporarily change spring-context-support dependency back to <iden>, the formal release turns to be broken. "
+0,"Changes on demo, for test purpose. "
+1,*** empty log message *** 
+3, <method_name>  to replace <iden>( <file_name> ) 
+0,"Revisit <iden> configuration structure  <enter> This commit removes the `client` namespace for <iden> as the component that is created is `<iden>`, not `InfluxDBClient` or something. <enter> This aligns with all the other url/user/password properties Spring Boot provides already <enter> See  <link> "
+3,"Use <iden> in  <file_name> <enter> The utility here is negligible. We're sharing threads between HTTP, HTTP/2 and web sockets now. "
+3,"simplified <iden> check in <iden>, using it in  <enter> BlockJUnit4ClassRuner "
+3,add start status for <iden> server 
+0,Clean out <iden> 8 READMEs to further discourage use 
+3,Special case <iden> type for multi- <file_name>  parts. 
+2,Do not trap <iden> from request body conversion. 
+0,Test <iden> with <iden> provider ( <link> ) 
+0,Drop back to Surefire <version> as <version> was rebranded as <version> 
+0,Polish new layered jar support 
+0,RxJava <version> with an important Android fix.  <enter> Just in case someone is relying on the transitive dependency. 
+0,Implement date formatting and parsing as extensions ( <link> ) 
+3,"Forbid null map values, and null maps. "
+0,Upgrade to Byte Buddy <version>  <enter> Closes <link> 
+3,Remove <iden> from  <file_name>  and related methods. 
+2,fixes for <link> and <link> 
+0,Add example of using <iden>  <file_name>  as a <iden>  <method_name> <enter> This also adds the  <file_name>  instance as a param to the string  <file_name>  to allow it to delegate to others directly. This brings it into parity with the method signatures of the other  <file_name>  methods anyway. 
+0,make metadata key contain : when version and group is empty ( <link> ) 
+0,[Dubbo-2766]Fix 2766 and enhance the invoke command ( <link> )  <enter> * add getter and setter for ServiceConfig's interfaceName property#2353 <enter> * add interfaceName to ignoreAttributeNames and change the unit test <enter> * delete the demo source code and update the unit test <enter> * unchange ServiceConfig <enter> * update unit test <enter> * update unit test <enter> *  fix <link>  and enhance invoke command 
+3,Use Sources and Sinks for all <iden>. 
+0,Remove unused import for unit test ( <link> )  <enter> * clear unused import 
+3,Added  <file_name>  <iden> 
+3,Use <iden>'s appending sink for <iden>. 
+1,Changes due to code review from @dsaff . 
+0,Throw <iden> again from <iden>  <enter> This is to address issue  <link> . 
+2,Fix  <method_name>  javadoc. (Thanks to lacostej for initial pull) <enter>  Closes <link> . 
+1,Polish 
+3,Simplify observable creation and reduce runtime allocations. 
+0,Upgrade to <iden> <version>  <enter> Closes <link> 
+2,Dubbo-3473 Fix Not Properly Closed Resources ( <link> ) 
+0,Add some missing Nullable annotations 
+2,fix wrong telnet command package( <link> ) ( <link> ) 
+0,<link> : I18N effort for dubbo code base: dubbo-common 
+3,Suppress <iden> deprecation warnings 
+2,supplementary change for pull request#1388 
+0,"Add /error to ignored paths for security autoconfig  <enter> Protecting /error doesn't make a great deal of sense and if it is protected you don't get the ErrorPageFilter for the attempt at loading it, so Tomcat renders its own HTML error page (when deployed as <iden>). <enter>  Fixes <link> "
+3,Add response object to  <file_name>  success.  <enter> Gives access to response headers while still converting response within retrofit. 
+0,rename log file from alibaba to custom-access ( <link> ) 
+0,Remove unnecessary dependencies 
+3,Update to the latest  <method_name> <enter> Includes everything thru 8842981cbcfe20eb4721c0a2c867fa9a18233062 
+2,Fix  <file_name>  conditional 
+0,update version to <version> 
+2,to process a scenario when service type is not available and service  <file_name>  is not generic either <enter> to process a scenario when service type is not available and service  <file_name>  is not generic either 
+0,Default <iden> to not save SESSIONS.ser file  <enter> Update  <file_name>  so that session data isn't serialized by default. Prior to this commit the SESSIONS.ser file would either be written to `/tmp` or into `<iden>` (if one was set). <enter> By not saving session data we align <iden> with the other embedded servlet containers and reduce the risk of sensitive information being left in `/tmp`. <enter>  Fixes <link> 
+3,"Expose internal APIs for pluggable file systems.  <enter> We aren't yet ready to make <iden> a public type, but I don't mind making it _almost_ available via an internal API for those brave enough to try that. <enter> Also migrate all of our tests to use the  <method_name>  It's simpler. <enter>  <link> "
+3,add gpg signing plugin for protobuf compiler 
+0,"Remove <iden>-mode <iden> cipher suites  <enter> This removes the following cipher suites as supported-by-default: TLS_ECDHE_<iden>_WITH_AES_128_<iden>_SHA TLS_ECDHE_<iden>_WITH_AES_256_<iden>_SHA <enter> This tracks a similar change in Chromium 56:  <url>#remove_cbc-mode_ecdsa_ciphers_in_tls  <enter> OkHttp's updated cipher suites, plus comparisons to <iden>, <iden>, Chromium, Firefox, and Square's server-site configuration is here:  <url>  <enter>  Closes :  <link> "
+0,Update changelog for <version> 
+0,Remove multi config <iden> extension  <enter> Closes <link> 
+0,Cancel calls on unexpected exceptions  <enter> Closes :  <link> 
+0,avoid potential shutdown race condition. ( <link> ) 
+0,Correct link to <iden> MarkupTemplateEngine documentation  <enter> See  <link> 
+0,Fixed typo in  <file_name> : mDeamo 
+2,Update to support protobuf <version>. 
+3, <file_name>  try to load from itself <iden> when can not find resources. 
+3,add maven-compiler-plugin to  <file_name>  
+2,Fix Javadoc builds with the jsr305 dependency.  <enter> Because multiple modules share a package we need to share the dependency on everything in package-info.java. 
+0,Upgrade to Spring Integration <version>  <enter> Closes <link> 
+3,move examples  <enter> <url> 
+0,Set <iden> in default <iden>  <enter> Only affects the default <iden> (so when users are not overriding the default global user details). Makes the <iden> effectively available as it would be if we used <iden>.inMemoryAuthentication() as a shared object in the <iden>. <enter>  Fixes <link> 
+0,Log warning on slow host resolution  <enter> Update ` <file_name> ` so that if the `<iden>` call takes more than 200ms a warning is logged. <enter>  Closes <link> 
+3, <file_name>  parsing.  <enter> This includes everything but character encoding. The implementation is built around one oversized method that runs top to bottom; I found this was easier to follow than the switch statement recommended by the <iden> standard. 
+2,Incorporated <iden>'s patch for  <file_name> <enter> 
+0,Fix <link> - correct link to <version> release notes 
+3,added <iden>() to  <file_name>  
+0,upgrade version to <version> 
+0,"Fix <iden>() when a cache has not been initialized  <enter> <iden>() now means 'has close() been called', after commit  <link>  it meant 'has not been initialized or close() has been called'. <enter> Introduced explicit closed state. Minor tweak to use initialized state to determine whether cleanup will do anything. Added a test. "
+0,revert <link> by logging error msg. ( <link> ) 
+3,Disable summary report 
+0,Upgrade to Reactor <iden>  <enter> Closes <link> 
+0,Fix encoding of @bean in reference documentation  <enter> Closes <link> 
+0,"- Simplified <iden> code by assuming that all datapoints are static  <enter> (every one I've ever written is) <enter> - Removed  <file_name>  from  <file_name>  (makes the class more cohesive, but requires the notifier to get passed around a bunch. <iden> added to look at this.) <enter> - Extracted  <file_name> , absorbed  <file_name>  into  <method_name> Better cohesion, less coupling <enter> -  <method_name>  is no longer needed.  It was a nasty little beast and will not be missed. <enter> - Added comment to  <file_name>  <iden> <enter> - Added  <method_name>  probably change in upcoming model package revamp anyway "
+3,Append context id to <iden> of <iden> MBeans if name already exists in MBeanServer 
+0,support handle of exception from <iden> or <iden> ( <link> )  <enter> fix <link> 
+0,fixes and refactoring for http multipart post streaming 
+0,Upgrade to Tomcat <version>  <enter> Closes <link> 

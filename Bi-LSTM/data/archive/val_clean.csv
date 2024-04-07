@@ -1,0 +1,165 @@
+label,new_message1
+3,switch to assertj 
+3, <file_name>  - load through bootstrap 
+0,"keep demo simple, and switch to use zookeeper as registry center ( <link> )  <enter> * keep demo simple, and switch to use zookeeper as registry center <enter> * remove comment "
+3,Add  <file_name> <enter> [#48055575] [bs-31] Add hooks for failed application context startup 
+0,Polish 'Allow customization of <iden>'  <enter> Closes <link> 
+1,Delete  <file_name>  
+0,Add unit test for unpack and stick pack of dubbo and telent ( <link> ) 
+0,Fixed typo in  <file_name> : mDeamo 
+3,"Skip UTF-8 decode of keys, defer UTF-8 decode of data "
+2,fix qos configuration cannot work after added 'qos-enable' style support ( <link> ) <enter>  fixes <link> 
+0,Cleaning up indentation  <enter> The inline method refactoring conducted by eclipse introduced some extra tabs. <enter> Incomplete - task : Issue 551: Resolve sensitive equality in <iden> test. 
+0,Remove usages of <iden> as a raw type. ( <link> ) 
+0,Align  <file_name>  with Spring <iden> API improvements  <enter> This commit aligns  <file_name>  with FindByIndexNameSessionRepository API improvements that simplifies retrieval of sessions by principal name. <enter>  Closes <link> 
+2,Fix correctness of WebSocketReader reserved flags test 
+2,fix NPE when no listeners registered for key 
+3,Write up Beta 4's current change log. 
+0,Move source/target config out of error-prone block  <enter> <iden>-prone only works on pre-12 at the moment and we need this configuration to apply for all JDKs. 
+0,register callback once for the full filter chain. ( <link> ) 
+0,Refactor  <file_name>  by using <iden>  <enter> Cont.  <link>  <enter> We can use <iden> instead of overriding <iden> abstract class. 
+0,Prevent authenticated principal from clashing with argument of same name  <enter> Closes <link> 
+0,removed spaces before period in comment 
+0,"Support escaped characters in  <file_name> <enter> This commit adds the ability to have escaped characters, like the quote, when using the  <method_name>  It also adds a short test for escaped quotes. <enter>  Closes <link> "
+0,"Convert  <file_name> ,  <file_name>  to Kotlin ( <link> )  <enter> * Rename  <file_name> <version> to .kt (and others) <enter> * Convert  <file_name> ,  <file_name>  to Kotlin "
+0,Added two simple tests for boolean <iden> 
+3,update default dependency to the latest version. 
+0,Upgrade to Spring Restdocs <version>  <enter> Closes <link> 
+1, <file_name> <enter> <url> 
+2,Fix mockwebserver jar download 404 
+2, <method_name>  returns modifiable <iden> ( <link> ) 
+0,Be more careful around IOExceptions.  <enter> This adds a first test where a frame is truncated. That has some unpleasant consequences for the other tests because it means the  <file_name>  is more aggressive about closing the socket when all frames have been sent. <enter> It also reduces the use of exceptions for flow control when handling bogus incoming frames. This is a bit worse and a bit better; my goal is to make it easier to differentiate between protocol-level problems (bogus frames) from transport-level problems (closed sockets and EOF streams). 
+0,Convert  <file_name>  to Kotlin ( <link> )  <enter> * Convert  <file_name>  to Kotlin <enter> * Idiomatic Kotlin <enter> * Revert back to if condition 
+0,remove tomcat-embed-logging-juli ( <link> )  <enter> fixes <link> 
+0,Pull out  <file_name>  base class  <enter> This will allow us to support multiple forms of invocation beyond <iden> calls. 
+0,Add docs for setting <iden> with <iden> 
+0,Use a dummy value to further validation optional delegation  <enter> Prior to this other things might cause a null value. This ensures the value can only come from only place. 
+0,Rename 'pair' to 'field' to match annotation.  <enter> Closes <link> . 
+0,Add <iden> integration tests 
+0,Permit multipart filenames to contain non-ascii characters  <enter> Closes :  <link> 
+3,Added assert  <method_name>  
+0,Support protocol config for  <file_name>  annotation ( <link> ) 
+3,"Invalid assumptions, failed tests, and ignored tests now all print similarly "
+3,Tweaked  <file_name>  a bit. It still seems strange that the class runner creates a statement which creates another class runner (or perhaps more class runners?). 
+0,Remove openjdk6 from Travis pipeline for now  <enter> Related issue:  <link> 
+0,Update concurrency.md ( <link> ) 
+0,Update README.md -> <iden> moved to Github 
+3,Polish distribution  <file_name>  
+0,Updated  <file_name>  
+3,add <iden> for dynamicly created class 
+0,Prefer interfaces over concrete classes  <enter> Makes code easier to scan by removing unnecessary noise. 
+0,fix for <link> Master now builds on windows. 
+0,"Make <iden> optional for <iden>  <enter> This commit removes the required dependency on `<iden>` instances when creating `<iden>` beans, making it optional. <enter>  Closes <link> "
+3,Add reified create extension for <iden> 
+0,revert <link> by logging error msg. ( <link> ) 
+0,Remove obsolete <iden> 
+0,Rename classpath runner package  <enter> Remove `runner` since we're no longer tied to <iden> 4. <enter> See  <link> 
+0,List more contributor names 
+0,Don't throw  <file_name>  on permission errors  <enter> Update ` <file_name> ` so that the `<iden>` is not thrown for permission denied errors. <enter>  Fixes <link> 
+2,Do not trap <iden> from request body conversion. 
+0,Upgrade to Spring Data <iden>  <enter> Closes <link> 
+3,Now sorting tests globally 
+0,Remove duplicate ut classes 
+0,Improve some Markdown 
+0,Fix missing trailing / in resource paths 
+0,Polish '<iden> mode is not logging web and sql related loggers'  <enter> Closes <link> 
+0,Fix annotation link. <iden> is gone. 
+3,Remove tabs 
+0,Use <iden> to model the response body everywhere.  <enter> This makes cache writing and gzip layering work a bit nicer because there are fewer fields in  <file_name>  to track the various competing streams. 
+3,Added blurb about GSON documentation 
+3,Use <iden> <version>'s JsonAdapter.serializeNulls() 
+3,Clarify that annotating suite has no effect 
+3,Rewrite JavaDoc of  <method_name> <enter> Remove internal details of the created filter and describe its behaviour instead. 
+2,Fix some maven problems that are blocking the <version> release 
+0,Updated release notes  <enter> 
+0,"Add <iden> 7 and <iden> 8 samples  <enter> Switch the <iden> 8 and <iden> 9 samples to <iden> 7 and <iden> 8. Since <iden> 8 and <iden> 9 are now the default versions the previous samples are no longer relevant, however, we do need integration tests to check that we remain compatible with <iden> 7 and <iden> 8. <enter> See  <link> "
+0,Convert  <file_name>  to <iden> ( <link> )  <enter> * Convert  <file_name>  to <iden> <enter> * Rename  <file_name>  to .kt <enter> * Revert from @JvmOverloads constructor to two constructors <enter> * Add <iden> to delegate <enter> * Add  <file_name>  methods to <iden> excludes 
+0,remove  <file_name>  and use the  <file_name>  replacedly ( <link>  <enter> ) <enter> * [Dubbo] move the classes of model from config to rpc-api for reusing <enter> * remove  <file_name>  and use the  <file_name>  replacedly <enter> * [Dubbo] delete the unused imported of  <file_name>  <enter> * Update  <file_name>  <enter> this commits is no need to commit to remote repo. 
+0,Check for DSP to enable <iden>. ( <link> )  <enter> * Check for DSP to enable <iden>. <enter> * Move ducktyped method references into method body. <enter> * Add static check that determines if <iden> is supported. 
+0,Expose static factory for  <file_name> <enter> Also rework the internals of how an  <file_name>  gets instantiated and set as a tag on the <iden>. This will make a future change easier to land. 
+0,add tests 
+3,Handle <iden> in  <file_name>  
+2,Fix compilation errors 
+3,Convert  <file_name>  to Kotlin  <enter> Update  <file_name>  
+3, <file_name>  cleanup. 
+0,fix <link> : Reorder test to ensure call is canceled before its body is returned. 
+0,Added logo and contributor by name 
+0,Polish 'Improve docs on custom metrics'  <enter> Closes <link> 
+2,"safer check for invalid values, without catching OOM "
+0,Android 10 support for <iden> ( <link> ) 
+3,set all router rule enabled by default 
+0,add <iden> annotation ( <link> ) 
+2,fix travis cov ( <link> ) 
+0,Use Okio <version> final. 
+0,"Fix  <file_name> 鈥?handling of profiles activated by a file  <enter> Previously,  <file_name>  used a <iden> with no PathTransformer. If a  <file_name>  file contains a file-activated profile this would result in an NPE within Maven. This was made worse by the NPE not being included in the resulting failure message which hampered diagnosis of the problem. <enter> This commit updates  <file_name>  to configure its <iden> with a PathTransformer. It also improves the failure message that鈥檚 created from any problems that are reported by Maven while determining the active profiles to include a problem鈥檚 exception if it has one. <enter>  Closes <link> "
+0,Upgrade to Infinispan <version>  <enter> Closes <link> 
+3,Permit release candidates in version numbers. 
+0,Add cache documentation  <enter> See  <link> 
+0,Added name to contributors list 
+0,"Fix <link> Java <iden> use '_' split language, country, variant. ( <link> ) "
+3,Use <iden>'s appending sink for <iden>. 
+0,Polish <link> : Adding the new methods into  <file_name>  to manipulate the exported <iden> for service introspection ( <link> ) 
+0,Upgrade to Ehcache3 <version>  <enter> Closes <link> 
+0,"Use deterministic ordering of JavaBean methods  <enter> Update ` <file_name> ` so that methods and fields are sorted before being processed. This ensures that setters are called in a deterministic order, rather than the unspecified and variable order that reflection provides. <enter>  Fixes <link> "
+0,Use try-with-resources in  <file_name> <enter> See  <link> 
+3,Correct header length checking logic. Improve exception message. 
+0,"Blitz some more special characters from the metric names  <enter> When MVC path matchers are used as metric keys, they can still contain invalid characters and patterns (like asterisks). This change removes some more special characters and also tidies up the names a bit so no key part starts or ends with '-' (which is ugly). <enter>  Fixes <link> "
+0,Remove useless variable ( <link> ) 
+0,Add jaxb API to jersey starter  <enter> Closes <link> 
+3,Finishing the work of  <file_name> <enter> 
+0,"Move <iden> in config-api to bootstrap temporarily, to solve the unreasonable dependency problem between modules. For long term run, we should refactor the config-api module to stop it from depending on other modules. "
+3, <method_name>  creates any type  <enter> 
+2,Update  <file_name> <enter> fix the bug: cant enable override 
+0,Add missing import. 
+3,Provide a setter to set strict mode to false 
+3,Switch to GitHub Actions 
+2,Fix deprecation warnings in Testcontainers wait strategies  <enter> See  <link> 
+0,"Polish / <link> : With @reference , Aop does not work ( <link> )  <enter> * Polish / <link>  : With  @reference , Aop does not work <enter> * Polish / <link>  : [Infrastructure] Uprade com.alibaba.spring:spring-context-support <version> <enter> * Polish / <link>  : With  @reference , Aop does not work "
+2,Fix meta-data for spring.devtools.remote  <enter> See  <link> 
+0,Add  <method_name> <enter> Might be useful to expose this bookkeeping to app developers. 
+2,Wrong href link for Java <iden> in <iden> Javadoc 
+2,Polish  <enter> Closes <link> 
+0,Update 'Building reference documentation' section  <enter> This commit also changes  <file_name> ` to make it work with `full` Maven profile. <enter>  Closes <link> 
+0,Hamcrest <version> documented in release notes 
+0,Default <iden> to not save SESSIONS.ser file  <enter> Update  <file_name>  so that session data isn't serialized by default. Prior to this commit the SESSIONS.ser file would either be written to `/tmp` or into `<iden>` (if one was set). <enter> By not saving session data we align <iden> with the other embedded servlet containers and reduce the risk of sensitive information being left in `/tmp`. <enter>  Fixes <link> 
+1,Polish 
+0,fix <link> : PROPFIND request should not redirect to GET request 
+0,"temporarily change spring-context-support dependency back to <iden>, the formal release turns to be broken. "
+0,Move 'testdb' naming to  <file_name> <enter> Move the 'testdb' naming logic to ` <file_name> ` and expose the `deduceDatabaseName` method so they can be used in auto-configuration. <enter> See  <link> 
+0,add unit test for parsing path 
+0,Minor doc fix. 
+2,Skip buffer allocation when not needed. 
+3, <file_name>  takes <iden> target  <enter> 
+0,Support constructor binding on 3rd party classes  <enter> Closes <link> 
+0,More docs for  <method_name> <enter> Closes :  <link> Closes :  <link> 
+2,Fix NPE in  <file_name>  when migration.installedOn is null  <enter> See  <link> 
+0,Close Android test properly in case it passes ( <link> )  <enter> * Close test properly in case it passes <enter> * Fix 
+0,We're <version> now  <enter> 
+0,Create dedicated section for property conversion  <enter> See  <link> 
+0," <file_name>  snapshot() method removing entries that are being cached (<link> ) <enter> Fixed a bug I found. When using  <file_name> , <iden>() method of <iden>> returned by snapshot() method iterates through lruEntries, however if entry is not completed yet, it is removed (together with dirtyFiles) as cleanFiles don't exist yet - during saving response to disk. This caused sometimes file not being cached at all. "
+1,Formatting 
+3,find correct component type when the enclosing type is <iden><int[]> on <iden> 7 and beyond 
+3,Add a canceled event to  <file_name>  
+0,Add comments for <iden> implementations 
+0,"Prevent  <file_name>  interfering with Android tests  <enter> On Android we run the OkHttp tests as an instrumented test case. The default UncaughtExceptionHandler on Android will quit the app, causing the current test to fail. <enter>  <file_name>  creates a thread that fails for various reasons that are not related to / required for the actual test. Often the exception is thrown during a subsequent test. <enter> This change logs the exception but prevent it from propagating out of the top of the call stack. This decreases overall flakiness. "
+0,Cleaning up compile errors from reverting hamcrest change 
+2,Fixes bug reported on Support Request 615265  <enter> swingui  <file_name>  color on <iden> OS X 
+3,Update website to the latest design. 
+2,Fix  <method_name>  ( <link> )  <enter>  <method_name>  should not match when the given <iden> has no failures. 
+3,"Restore tests for response caching + <iden>.  <enter> One of the test cases bitrotted to failure as a consequence of the <iden> route selector change. I stopped assigning the socket, which it needed to cache the <iden> metadata. This is fixed. "
+0,304 Not Modified overrides <iden> and breaks cache ( <link> )  <enter> * Added failing test for changing of content encoding from (gzip to identity) * Remove <iden> IF it was not present otherwise revert it to the previously stored <iden> 
+0,Deprecate  <method_name> <enter> The method <iden> is used for writing assertions with Hamcrest. Hamcrest is an independent assertion library and contains an own <iden> method in the class 'org.hamcrest.MatcherAssert'. It is available both in the old Hamcrest <version> release and in the current Hamcrest <version>. Therefore the JUnit team recommends to use Hamcrest's own <iden> directly. 
+3,Merging from AlistairIsrael-classrules on github to ppreserve history because of non-fast forward merge (whatever that means) 
+3,"Multiple categories on tests,  <file_name>  inheritance, production classes in production package. "
+3,"Single-datapoint methods are now only called if the return types could be relevant, and theory parameter signatures are compared with types via a prebuilt map rather than reflection. "
+3,Adding a <iden>  <file_name>  for right before http call is being made. 
+0,"Limit recovery attempts for REFUSED_STREAM errors  <enter> We limit per-connection retries but not per-call retries, so this was creating large numbers of connections each of which called the server and accepted yet another REFUSED_STREAM. <enter> Instead we fail sooner with a <iden>. <enter> This shows that the  <file_name>  interface is still somewhat inadequate to support all of the use cases we have. "
+3,Check config instance in  <file_name>  before create a new one. 
+0,Removed unused import 
+3,Update Javadoc example 
+2, <method_name>  is nullable. ( <link> ) 
+0,Fix dead link to the ant task in  <file_name>  ( <link> )  <enter> <iden> to the ant junit task has been moved to another location. 
+0,Upgrade to Tomcat <version>  <enter> Closes <link> 
+0,"Relicense <iden> from CPL to EPL  <enter> EPL is the successor version of the CPL this makes re-licensing possible without seeking the approval of all contributors. <enter> CPL is actively hurting <iden> adaptation, it the following cases the deciding factor against <iden> was CPL. In both cases EPL would have been fine. * Netbeans can't ship <iden> [4] * OpenJDK uses TestNG instead of <iden> [5] <enter> Mike Milinkovich from the <iden> wrote [1] <enter> > Back in 2009, the CPL was superseded by the EPL. This means that the > EPL is the successor version of the CPL. It also means that using the > CPL is the licensing equivalent of using deprecated code. > > Because the EPL is the successor version to the CPL, the 'new version > re-licensing' clause in <iden> 7 of the CPL applies. In other words, > you can re- <file_name>  your project without seeking the approval of all > of your contributors. > The CPL and EPL basically differ by about one sentence, which you can > see here. The difference relates to the scope of patent licenses > terminated should someone sue another party for patent infringement. > This is the kind of stuff that lawyers love, but most developers > don't really care about. <enter> On the migration from CPL to EPL Mike Milinkovich wrote [2] <enter> > There was a two step process that was followed to make this happen. > First, following the terms of the CPL, <iden> assigned the > responsibility to serve as the <iden> of the CPL to the > <iden>. Second, the <iden> officially > recognized the EPL <version> as the new version of the CPL <version>. In OSI >  <file_name>  terminology, the EPL now supersedes the CPL. > > A quick read of the two licenses will quickly show that they are very > very close. Other than their names and (previously) their <iden> > Stewards, the only substantive difference is the breadth of the > patent  <file_name>  termination in the event of a patent law suit. (See > the second paragraph of <iden> 7.) For more information on the > relationship between the CPL and the EPL see the EPL  <method_name>  <enter> You can find more information about the difference at [3]. <enter> The new ` <file_name> ` is based on a plain text version of the EPL with formatted so that the diff is a clean as possible. <enter> I'll submit another pull request for the gh-pages branch. <enter>  [1]  <url> [2]  <url> [3]  <url>#EPLDIFFER [4]  <url>#deprecated [5]  <url> "
+0,Add README to cli 
+1,Idiomatic Kotlin for <iden> 
