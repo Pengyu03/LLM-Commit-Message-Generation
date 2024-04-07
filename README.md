@@ -115,7 +115,7 @@ Before running the code, please modify the following variables according to the 
 #### Running the Code
 Ensure that you have correctly set the variables mentioned above. Run the corresponding Python script to perform the commit message generation task, for example:
 ```python
-$ python gpt_example.py
+$ python GPT_with_example.py
 ```
 
 ### Calculate Automated Evaluation Metrics:
