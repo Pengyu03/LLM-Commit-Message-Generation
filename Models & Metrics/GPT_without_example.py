@@ -7,6 +7,11 @@ import nltk
 import traceback
 from openai import OpenAI
 import time
+
+lan = 'py.jsonl'
+output_filename = 'pygptnoexample.jsonl'
+key_list = []
+
 def is_camel_case(s):
     return s != s.lower() and s != s.upper() and "_" not in s
 
@@ -58,7 +63,7 @@ def process_diff(diff):
 
 
 # 打开JSONL文件并读取数据
-with open('py1.jsonl', 'r',encoding='utf8') as f:
+with open(lan, 'r',encoding='utf8') as f:
     json_data = f.readlines()
 data = {"diff_id": 0, "msg": f"0", "msgGPT": f"0", "METEOR Score": f"0", "BLEU Score": f"0", "ROUGE-L Score": f"0"}
 
@@ -68,14 +73,7 @@ temp = 0
 for item in json_data:
     attempts = 0
     while attempts < 5:
-        key_list = [
-            "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",
-            "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",
-            "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",
-            "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",
-            "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",
-
-        ]
+        key_list = key_list
         key = key_list[temp]
         client = OpenAI(
             api_key=key,
@@ -144,14 +142,14 @@ for item in json_data:
             data = {"diff_id": diff_id, "msg": f"{msg}"}
             for i in range(30):
                 data[f"msgGPT{i}"] = f"{msgGPTs[i]}"
-            with open('pygptnoexample.jsonl', 'a') as f:
+            with open(output_filename, 'a') as f:
                 json.dump(data, f)
                 f.write('\n')
             break
         except:
             traceback.print_exc()
             data = {"diff_id": diff_id, "msg": f"0", "msgGPT": f"0"}
-            with open('pygptnoexample.jsonl', 'a') as f:
+            with open(output_filename, 'a') as f:
                 json.dump(data, f)
                 f.write('\n')
             time.sleep(1)
