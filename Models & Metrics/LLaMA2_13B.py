@@ -18,6 +18,9 @@ from gradio_client import Client
   #  wait_random_exponential,
 #)
 #@retry(wait=wait_random_exponential(min=1, max=60), retry=retry_if_exception_type((openai.error.RateLimitError, openai.error.APIError)))
+lan = 'py.jsonl'
+out_filename = 'java_result_7B.jsonl'
+
 def calculate_meteor(sentence1, sentence2):
     """
     计算两个句子之间的METEOR分数
@@ -84,7 +87,7 @@ def remove_between_identifiers(text, identifier_start, identifier_end):
     return result
 
 # 打开JSONL文件并读取数据
-with open('output999.jsonl', 'r',encoding='UTF-8') as f:
+with open(lan, 'r',encoding='UTF-8') as f:
     json_data = f.readlines()
 data = {"diff_id":0, "msg": f"0", "msgGPT": f"0", "METEOR Score" : f"0", "BLEU Score" : f"0","ROUGE-L Score":f"0"}
 with open('java_final_no_result_7B7.jsonl', 'a',encoding='UTF-8') as f:
@@ -183,7 +186,7 @@ for item in json_data:
             merged_dict = {**data, **data1}
 
 
-            with open('java_final_no_result_7B7.jsonl', 'a',encoding='UTF-8') as f:
+            with open(out_filename, 'a',encoding='UTF-8') as f:
                 json.dump(merged_dict, f)
                 f.write('\n')
             time.sleep(2)
@@ -192,7 +195,7 @@ for item in json_data:
         except:
             traceback.print_exc()
             merged_dict = {"diff_id": diff_id, "msg": f"0", "msgGPT": f"0"}
-            with open('java_final_no_result_7B7.jsonl', 'a',encoding='UTF-8') as f:
+            with open(out_filename, 'a',encoding='UTF-8') as f:
                 json.dump(data, f)
                 f.write('\n')
             #time.sleep(5)
