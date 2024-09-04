@@ -29,7 +29,7 @@ The datasets have been preprocessed and can be directly used for model training 
 ### ERICommitter Web
 **ERICommiterWeb** is a web-based commit message generator that helps developers automatically generate high-quality commit messages to improve the efficiency of code management. 
 
-## Prerequisites
+### Prerequisites
 
 Before starting, ensure you have the following ready:
 
@@ -48,9 +48,9 @@ Before starting, ensure you have the following ready:
   - For Java commits, prepare the file `javatrainyuan3.jsonl`.
 
 
-## Server Configuration from Scratch
+### Server Configuration from Scratch
 
-### 1. Install Required Software
+#### 1. Install Required Software
 
 First, ensure that Git, Python 3, and Nginx are installed on your server.
 
@@ -59,7 +59,7 @@ sudo apt update
 sudo apt install git python3 python3-venv python3-pip nginx
 ```
 
-### 2. Clone Project Code
+#### 2. Clone Project Code
 Use Git to clone the ERICommiterWeb project code onto the server.
 
 ```bash
@@ -68,14 +68,14 @@ sudo git clone https://github.com/Pengyu03/LLM-Commit-Message-Generation.git
 cd ERICommiter_Web
 ```
 
-### 3. Set Up Virtual Environment and Install Dependencies
+#### 3. Set Up Virtual Environment and Install Dependencies
 Create and activate a Python virtual environment, then install the required dependencies.
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
-### 4. Configure Systemd Service
+#### 4. Configure Systemd Service
 Create a new Systemd service file to manage the application using systemctl.
 
 ```bash
@@ -107,7 +107,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable ericommiterweb
 ```
 
-5. Configure Nginx
+#### 5. Configure Nginx
 Edit the Nginx configuration file to proxy traffic to the application.
 
 ```bash
