@@ -38,7 +38,7 @@ Before starting, ensure you have the following ready:
 - **Python 3.x**: The runtime environment required for the application.
 - **Nginx**: A web server.
 - **Systemd**: For service management.
-- **CodeReviewer Model**: Download the pre-trained `[codereviewer](https://huggingface.co/microsoft/codereviewer)` model file.
+- **CodeReviewer Model**: Download the pre-trained [codereviewer](https://huggingface.co/microsoft/codereviewer) model file.
 - **GPT-3.5 API Key**: You need to obtain an API key from [OpenAI](https://platform.openai.com/) to enable GPT-3.5 functionalities.
 - **Vector Retrieval Libraries**:
   - For Python, ensure the file `vtrain_py.jsonl` is prepared.
