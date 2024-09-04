@@ -2,12 +2,15 @@
 This repository contains our code and dataset for studying the performance of Large Language Models (LLMs) in generating commit messages. Our research covers datasets from five programming languages (Java, Python, C#, C++, JS), along with code for generating commit messages using different LLMs (LLaMA-7B, LLaMA-13B, GPT-3.5, Gemini).
 
 ## Datasets:
-We provide cleaned datasets for the following five programming languages:
+We provide cleaned datasets for the following 8 programming languages:
 * Java
 * Python
 * C#
 * C++
 * JavaScript
+* Rust
+* Go
+* PHP
 
 The datasets are located in the `datasets` directory, with each language's dataset stored in its respective subdirectory.
 
@@ -22,6 +25,99 @@ This repository includes the following code:
 
 ### Datasets
 The datasets have been preprocessed and can be directly used for model training and testing.
+
+### ERICommitter Web
+**ERICommiterWeb** is a web-based commit message generator that helps developers automatically generate high-quality commit messages to improve the efficiency of code management. 
+
+## Prerequisites
+
+Before starting, make sure you have the following:
+
+- **Server Environment**: A Linux server (e.g., Ubuntu).
+- **Git**: For version control and code management.
+- **Python 3.x**: The runtime environment required for the application.
+- **Nginx**: A web server.
+- **Systemd**: For service management.
+
+## Server Configuration from Scratch
+
+### 1. Install Required Software
+
+First, ensure that Git, Python 3, and Nginx are installed on your server.
+
+```bash
+sudo apt update
+sudo apt install git python3 python3-venv python3-pip nginx
+```
+
+### 2. Clone Project Code
+Use Git to clone the ERICommiterWeb project code onto the server.
+
+```bash
+cd /var/www/
+sudo git clone https://github.com/Pengyu03/LLM-Commit-Message-Generation.git
+cd ERICommiter_Web
+```
+
+### 3. Set Up Virtual Environment and Install Dependencies
+Create and activate a Python virtual environment, then install the required dependencies.
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+### 4. Configure Systemd Service
+Create a new Systemd service file to manage the application using systemctl.
+
+```bash
+sudo nano /etc/systemd/system/ericommiterweb.service
+Add the following content to the file:
+```
+
+```ini
+[Unit]
+Description=ERICommiterWeb Service
+After=network.target
+
+[Service]
+User=www-data
+WorkingDirectory=/var/www/ERICommiterWeb
+ExecStart=/var/www/ERICommiterWeb/venv/bin/python3 /var/www/ERICommiterWeb/app.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Save and exit the editor, then enable the service:
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable ericommiterweb
+```
+
+5. Configure Nginx
+Edit the Nginx configuration file to proxy traffic to the application.
+
+```bash
+sudo nano /etc/nginx/sites-available/ericommiterweb
+```
+Add the following configuration:
+
+```nginx
+server {
+    listen 80;
+    server_name your_domain_or_IP;
+
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+```
 
 ### Reproducing the Bi-LSTM Model
 Navigate to the Bi-LSTM directory and execute the following code to reproduce the Bi-LSTM model:
