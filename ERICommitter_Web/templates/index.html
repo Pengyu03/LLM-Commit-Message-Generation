@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commit Message Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            background-color: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        textarea, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="button"], .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="button"]:hover, .btn:hover {
+            background-color: #0056b3;
+        }
+        .btn-selected {
+            background-color: #0056b3;
+        }
+        .btn-generating {
+            background-color: #ffa500;
+        }
+        pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .btn-group {
+            margin-bottom: 20px;
+        }
+        .btn-group .btn {
+            margin-right: 10px;
+        }
+        .progress-bar {
+            width: 100%;
+            background-color: #f3f3f3;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 10px;
+            display: none;
+        }
+        .progress-bar-fill {
+            height: 20px;
+            background-color: #007bff;
+            width: 0%;
+            transition: width 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Commit Message Generator</h1>
+        <form id="commit-form">
+            <label for="code_text">Code Text:</label>
+            <textarea id="code_text" name="code_text" rows="10" cols="50"></textarea><br>
+            <label for="api_key">API Key:</label>
+            <input type="text" id="api_key" name="api_key"><br>
+            <label for="site_key">Site Key:</label>
+            <input type="text" id="site_key" name="site_key"><br>
+            <div class="btn-group">
+                <button type="button" class="btn" id="btn-java" onclick="setDiffId('java', this)">Java</button>
+                <button type="button" class="btn" id="btn-python" onclick="setDiffId('python', this)">Python</button>
+            </div>
+            <input type="hidden" id="diff_id" name="diff_id">
+            <input type="button" id="generate-btn" value="Generate" onclick="generateCommitMessage()">
+        </form>
+        <div class="progress-bar" id="progress-bar">
+            <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        </div>
+        <h2>Generated Commit Message:</h2>
+        <pre id="commit-message"></pre>
+
+        <h2>Query Records</h2>
+        <form id="query-form">
+            <label for="query_site_key">Site Key:</label>
+            <input type="text" id="query_site_key" name="query_site_key"><br>
+            <input type="button" value="Query" onclick="queryRecords()">
+        </form>
+        <h2>Query Results:</h2>
+        <pre id="query-results"></pre>
+    </div>
+
+    <script>
+        function setDiffId(diffId, element) {
+            document.getElementById('diff_id').value = diffId;
+            var buttons = document.querySelectorAll('.btn-group .btn');
+            buttons.forEach(function(btn) {
+                btn.classList.remove('btn-selected');
+            });
+            element.classList.add('btn-selected');
+        }
+
+        function generateCommitMessage() {
+            var code_text = document.getElementById("code_text").value;
+            var diff_id = document.getElementById("diff_id").value;
+            var api_key = document.getElementById("api_key").value;
+            var site_key = document.getElementById("site_key").value;
+
+            if (!diff_id) {
+                alert('Please select a language by clicking Java or Python');
+                return;
+            }
+
+            var generateBtn = document.getElementById("generate-btn");
+            generateBtn.classList.add('btn-generating');
+            generateBtn.value = 'Generating...';
+
+            var progressBar = document.getElementById("progress-bar");
+            var progressBarFill = document.getElementById("progress-bar-fill");
+            progressBar.style.display = 'block';
+            progressBarFill.style.width = '0%';
+
+            var interval = setInterval(function() {
+                fetch('/progress')
+                .then(response => response.json())
+                .then(data => {
+                    progressBarFill.style.width = data.progress + '%';
+                    if (data.progress >= 100) {
+                        clearInterval(interval);
+                        generateBtn.classList.remove('btn-generating');
+                        generateBtn.value = 'Generate';
+                    }
+                });
+            }, 500);
+
+            fetch('/generate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'code_text=' + encodeURIComponent(code_text) + '&diff_id=' + encodeURIComponent(diff_id) + '&api_key=' + encodeURIComponent(api_key) + '&site_key=' + encodeURIComponent(site_key)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.commit_message) {
+                    document.getElementById("commit-message").textContent = data.commit_message;
+                } else {
+                    document.getElementById("commit-message").textContent = "Error: " + data.error;
+                }
+            });
+        }
+
+        function queryRecords() {
+            var query_site_key = document.getElementById("query_site_key").value;
+
+            fetch('/records', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'site_key=' + encodeURIComponent(query_site_key)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.records) {
+                    document.getElementById("query-results").textContent = JSON.stringify(data.records, null, 2);
+                } else {
+                    document.getElementById("query-results").textContent = "Error: " + data.error;
+                }
+            });
+        }
+    </script>
+</body>
+</html>
