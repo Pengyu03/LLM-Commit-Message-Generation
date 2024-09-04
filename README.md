@@ -31,13 +31,22 @@ The datasets have been preprocessed and can be directly used for model training 
 
 ## Prerequisites
 
-Before starting, make sure you have the following:
+Before starting, ensure you have the following ready:
 
 - **Server Environment**: A Linux server (e.g., Ubuntu).
 - **Git**: For version control and code management.
 - **Python 3.x**: The runtime environment required for the application.
 - **Nginx**: A web server.
 - **Systemd**: For service management.
+- **CodeReviewer Model**: Download the pre-trained `[codereviewer](https://huggingface.co/microsoft/codereviewer)` model file.
+- **GPT-3.5 API Key**: You need to obtain an API key from [OpenAI](https://platform.openai.com/) to enable GPT-3.5 functionalities.
+- **Vector Retrieval Libraries**:
+  - For Python, ensure the file `vtrain_py.jsonl` is prepared.
+  - For Java, ensure the file `vtrain_java.jsonl` is prepared.
+- **Commit Message Original Text Files**:
+  - For Python commits, prepare the file `pythontrainuyuan3.jsonl`.
+  - For Java commits, prepare the file `javatrainyuan3.jsonl`.
+
 
 ## Server Configuration from Scratch
 
@@ -71,8 +80,10 @@ Create a new Systemd service file to manage the application using systemctl.
 
 ```bash
 sudo nano /etc/systemd/system/ericommiterweb.service
-Add the following content to the file:
 ```
+
+Add the following content to the file:
+
 
 ```ini
 [Unit]
@@ -118,6 +129,8 @@ server {
     }
 }
 ```
+
+**Note:** In order to ensure that the program is used by SDUOJ team members during the study, the Site Key is set as `sduoj`. You can continue to use the Site Key or change the program to set your Site Key. 
 
 ### Reproducing the Bi-LSTM Model
 Navigate to the Bi-LSTM directory and execute the following code to reproduce the Bi-LSTM model:
