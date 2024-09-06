@@ -31,7 +31,7 @@ The datasets have been preprocessed and can be directly used for model training 
 
 ### ERICommitter Web
 **ERICommiterWeb** is a web-based commit message generator that helps developers automatically generate high-quality commit messages to improve the efficiency of code management. The following is ERICommiterWeb's user interface:
-![User interface](https://github.com/user-attachments/assets/6b6ec46f-017b-4d84-a916-20b2537fa0e4 =522*566)
+![User interface](https://github.com/user-attachments/assets/6b6ec46f-017b-4d84-a916-20b2537fa0e4 =522×566)
 
 ### Prerequisites
 
