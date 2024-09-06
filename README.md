@@ -14,6 +14,9 @@ We provide cleaned datasets for the following 8 programming languages:
 
 The datasets are located in the `datasets` directory, with each language's dataset stored in its respective subdirectory.
 
+The following is the scale table of MCMD+ constructed in this study:
+![c9c8debf209dc0d6e98b54a427feb12](https://github.com/user-attachments/assets/a2022f0e-74ff-43a6-9e7c-1f874296bf6c)
+
 ## Code:
 This repository includes the following code:
 
@@ -27,7 +30,8 @@ This repository includes the following code:
 The datasets have been preprocessed and can be directly used for model training and testing.
 
 ### ERICommitter Web
-**ERICommiterWeb** is a web-based commit message generator that helps developers automatically generate high-quality commit messages to improve the efficiency of code management. 
+**ERICommiterWeb** is a web-based commit message generator that helps developers automatically generate high-quality commit messages to improve the efficiency of code management. The following is ERICommiterWeb's user interface:
+![User interface](https://github.com/user-attachments/assets/6b6ec46f-017b-4d84-a916-20b2537fa0e4)
 
 ### Prerequisites
 
