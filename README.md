@@ -15,7 +15,8 @@ We provide cleaned datasets for the following 8 programming languages:
 The datasets are located in the `datasets` directory, with each language's dataset stored in its respective subdirectory.
 
 The following is the scale table of MCMD+ constructed in this study:
-![1725587395683](https://github.com/user-attachments/assets/d072c0ea-b667-4fa6-97ec-b4775f082a45)
+![460369cb1c33782ead546c9d0de35e8](https://github.com/user-attachments/assets/b8f0f4bb-34c4-480f-8d04-c93928031db2)
+
 
 
 ## Code:
