@@ -1,5 +1,5 @@
 # Automated Commit Message Generation with Large Language Models: An Empirical Study and Beyond
-This repository contains our code and dataset for studying the performance of Large Language Models (LLMs) in generating commit messages. Our research covers datasets from 8 programming languages (Java, Python, C#, C++, JS, Rust, Go, PHP), along with code for generating commit messages using different LLMs (LLaMA-7B, LLaMA-13B, GPT-3.5, Gemini). [view PDF](https://example.com/document.pdf)
+This repository contains our code and dataset for studying the performance of Large Language Models (LLMs) in generating commit messages. Our research covers datasets from 8 programming languages (Java, Python, C#, C++, JS, Rust, Go, PHP), along with code for generating commit messages using different LLMs (LLaMA-7B, LLaMA-13B, GPT-3.5, Gemini). [view PDF]([https://example.com/document.pdf](https://arxiv.org/pdf/2404.14824))
 
 ## Datasets:
 We provide cleaned datasets for the following 8 programming languages:
